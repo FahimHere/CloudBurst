@@ -1,0 +1,55 @@
+//1363
+
+//below is class declaration rectangle.h
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
+class Rectangle{
+    public:
+        int width, length;
+        Rectangle();
+        Rectangle(int width1,int length1);
+        void getRectangle();
+        int getArea();
+        int getPerimeter();
+};
+
+#endif // RECTANGLE_H
+
+//below is class imeplementation rectangle.cpp
+#include<iostream>
+#include "rectangle.h"
+Rectangle::Rectangle()
+{
+    width=0;
+    length=0;
+}
+Rectangle::Rectangle(int width1,int length1)
+{
+    width=width1;
+    length=length1;
+}
+void Rectangle::getRectangle()
+{
+    std::cin>>width>>length;
+}
+int Rectangle::getArea()
+{
+    return (width*length);
+}
+int Rectangle::getPerimeter()
+{
+    return (width+length)*2;
+}
+//below is main.cpp
+#include <iostream>
+#include "rectangle.h"
+using namespace std;
+
+int main()
+{
+    Rectangle paraFirst;
+    paraFirst.getRectangle();
+    cout<<"The area is "<<paraFirst.getArea()<<endl<<endl
+        <<"The Perimeter is "<<paraFirst.getPerimeter()<<endl;
+    return 0;
+}
