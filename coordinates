@@ -1,0 +1,52 @@
+/*【Question Description】
+
+Design a class named MyPoint that contains:
+
+Two int data fields named x and y that specify the  coordinates  the point. 
+
+An int data field named radius that specifies the radius of the fan.
+
+A no-arg constructor that creates  a default  mypoint with x 0,  y 0；
+
+A constructor that creates  a fan with parameters；
+
+A function named point_diplay() that displays the point；
+
+A function named getAdd() that sums the coordinates；
+
+Write a test program that creates a  MyPoint object .Assign x,y  to the object.And display the point and the sum.*/
+
+
+#include <iostream>
+using namespace std;
+class MyPoint{
+    public:
+        int x,y,radius;
+        MyPoint()
+        {
+            x=0;
+            y=0;
+        }
+        MyPoint(int x1,int y1)
+        {
+            x=x1;
+            y=y1;
+        }
+        string point_display()
+        {
+            return string{"("} + std::to_string(x)
+         + "," + std::to_string(y) + ")";;
+        }
+        int getAdd()
+        {
+            return x+y;
+        }
+};
+int main()
+{
+    MyPoint mypoint;
+    cin>>mypoint.x>>mypoint.y;
+    cout<<"The position of the point is "<<mypoint.point_display()<<endl;
+    cout<<"The sum of the coordinates is "<<mypoint.getAdd()<<endl;
+    return 0;
+}
